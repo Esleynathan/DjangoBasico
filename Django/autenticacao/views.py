@@ -6,4 +6,4 @@ def cadastro(request):
     {'nome': 'Outro Esley', 'idade': '21','profissao': 'Escritor'}
     ]
     return render(request, ('cadastro/index.html'),
-    {'pessoa': pessoa})
+    {'pessoas': pessoa})

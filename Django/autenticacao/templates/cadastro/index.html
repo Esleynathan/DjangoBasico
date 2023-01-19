@@ -1,7 +1,9 @@
 <h1>Cadastro</h1>
-
-<h3> Nome: {{pessoa.0.nome}} </h3>
-
-<h3> Idade: {{pessoa.0.idade}} </h3>
-
-<h3> Profissão: {{pessoa.profissao}}</h3>
+{% if x == 0 %}
+    {% for i in pessoas %}
+    <h3> Nome: {{i.nome}} </h3>
+    <h3> Idade: {{i.idade}} </h3>
+    <h3> Profissão: {{i.profissao}}</h3>
+    <hr>
+    {%endfor%}
+{%endif%}
