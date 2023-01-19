@@ -8,8 +8,19 @@
 {%endblock%}
 
 
-{%block 'conteudo'%}  
+{%block 'conteudo'%} 
+
+{% if erro == '1' %}
+
+    <div class="alert alert-danger" role="alert">
+    Email invalido.
+    </div>
+
+{%endif%}
+
 <h1> Oi </h1>
+
+
 <img src=" {% static 'img/manu.jpg' %} ">
 {%endblock%}
 
