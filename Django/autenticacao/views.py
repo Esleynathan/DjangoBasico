@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def cadastro(request):
-    nome = 'Ésley Nathan'
-    idade = '20'
-    profissao = 'Programador'
+    pessoa = [{'nome': 'Ésley Nathan', 'idade': '20','profissao': 'Programador'},
+    {'nome': 'Outro Esley', 'idade': '21','profissao': 'Escritor'}
+    ]
     return render(request, ('cadastro/index.html'),
-    {'nome': nome, 'idade': idade, 'profissao': profissao})
+    {'pessoa': pessoa})
