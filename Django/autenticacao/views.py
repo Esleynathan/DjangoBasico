@@ -3,16 +3,11 @@ from django.http import HttpResponse
 import json
 
 def cadastro(request):
-    # nome = request.GET.get('nome')    
-    # sobrenome = request.GET.get('sobrenome')    
-    # idade = request.GET.get('idade')
+    if request.method == "GET":
+        return render(request, 'cadastro/index.html')
 
-    erro = request.GET.get('erro')  
-    
-    return render(request, ('cadastro/index.html'), {'erro': erro})
-    # {'nome': nome, 'sobrenome': sobrenome, 'idade':idade})
+    elif request.method == "POST":
+        nome = request.POST.get('nome')
+        email = request.POST.get('email')
 
-def valida_formulario(request):
-    nome = request.POST.get('nome')
-    email = request.POST.get('email')
-    return HttpResponse(json.dumps({'nome':nome, 'email': email}))
+        return HttpResponse(json.dumps({'nome': nome, 'email': email}))

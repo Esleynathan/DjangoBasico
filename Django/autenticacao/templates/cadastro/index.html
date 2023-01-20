@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}ddd
 {%block 'conteudo'%} 
-<form method="POST" action="{% url 'valida_formulario' %}">{% csrf_token %}
+<form method="POST" action="{% url 'cadastro' %}">{% csrf_token %}
     <input type="text" placeholder="Nome..." name="nome">
     <input type="email" placeholder="Email..." name="email">
 
