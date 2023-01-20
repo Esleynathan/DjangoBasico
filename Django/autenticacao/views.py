@@ -20,3 +20,7 @@ def cadastro(request):
         pessoa.save()
 
         return HttpResponse('Você foi cadastrado.')
+
+def listar(request):
+    pessoas = Pessoa.objects.all()
+    return render(request, 'listar/listar.html', {'pessoas': pessoas})
