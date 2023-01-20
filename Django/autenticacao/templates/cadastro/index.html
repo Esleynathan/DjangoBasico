@@ -1,26 +1,12 @@
 {% extends 'base.html' %}
-{% load static %}
-
-{%block 'titulo'%}Meu site{%endblock%}
-
-{%block 'head'%}
-<link rel="stylesheet" href="{% static 'css/css.css' %}">
-{%endblock%}
-
-
+{% load static %}ddd
 {%block 'conteudo'%} 
+<form method="GET" action="{% url 'valida_formulario' %}">{% csrf_token %}
+    <input type="text" placeholder="Nome..." name="nome">
+    <input type="email" placeholder="Email..." name="email">
 
-{% if erro == '1' %}
-
-    <div class="alert alert-danger" role="alert">
-    Email invalido.
-    </div>
-
-{%endif%}
-
-<h1> Oi </h1>
-
-
-<img src=" {% static 'img/manu.jpg' %} ">
+    <input type="submit">
+    
+</form>
 {%endblock%}
 
