@@ -13,6 +13,6 @@ def cadastro(request):
     # {'nome': nome, 'sobrenome': sobrenome, 'idade':idade})
 
 def valida_formulario(request):
-    nome = request.GET.get('nome')
-    email = request.GET.get('email')
+    nome = request.POST.get('nome')
+    email = request.POST.get('email')
     return HttpResponse(json.dumps({'nome':nome, 'email': email}))
