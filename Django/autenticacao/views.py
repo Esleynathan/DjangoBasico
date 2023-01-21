@@ -35,9 +35,13 @@ def listar(request):
     #                     cargo = cargo)
     #     pessoa.save()
 
-    pessoas = Pessoa.objects.filter(cargo__pk = 1).filter
+    cargo = Cargos.objects.get(id = 1)
+    
+    pessoa = Pessoa.objects.get(id = 1)
+    pessoa.cargo = cargo
+    pessoa.save()
 
-
+    pessoas = Pessoa.objects.all()
     return render(request, 'listar/listar.html', {'pessoas': pessoas})
     
     # ?nome=erika&email=erika@e.com&senha=senha1
