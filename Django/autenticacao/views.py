@@ -22,5 +22,8 @@ def cadastro(request):
         return HttpResponse('Você foi cadastrado.')
 
 def listar(request):
-    pessoas = Pessoa.objects.filter(nome = 'user2') | Pessoa.objects.filter(nome = 'user1').exclude(senha = 'senha2')
+    dados = Pessoa.objects.filter(nome = 'Ésley Nathan').filter(senha = 'senha1')[0]
+    dados.nome += 'Gomes Barbosa'
+    dados.save()
+    pessoas = Pessoa.objects.all()
     return render(request, 'listar/listar.html', {'pessoas': pessoas})
