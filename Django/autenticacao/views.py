@@ -22,16 +22,21 @@ def cadastro(request):
         return HttpResponse('Você foi cadastrado.')
 
 def listar(request):
-    if len(request.GET) != 0:
-        nome = request.GET.get('nome')
-        email = request.GET.get('email')
-        senha = request.GET.get('senha')
+    # if len(request.GET) != 0:
+    #     nome = request.GET.get('nome')
+    #     email = request.GET.get('email')
+    #     senha = request.GET.get('senha')
 
-        pessoa = Pessoa(nome = nome,
-                        email = email,
-                        senha = senha,
-                        cargo = 1)
-        pessoa.save()
+    #     cargo = Cargos.objects.get(id=1)
+
+    #     pessoa = Pessoa(nome = nome,
+    #                     email = email,
+    #                     senha = senha,
+    #                     cargo = cargo)
+    #     pessoa.save()
+
+    pessoas = Pessoa.objects.filter(nome = 'esley')
+    pessoas.delete()
 
 
     pessoas = Pessoa.objects.all()
