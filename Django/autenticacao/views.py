@@ -35,10 +35,13 @@ def listar(request):
     #                     cargo = cargo)
     #     pessoa.save()
 
-    cargo = Cargos.objects.get(id = 1)
+    cargo = Cargos.objects.get(id = 1)    
+    cargo_2 = Cargos.objects.get(id = 2)
     
     pessoa = Pessoa.objects.get(id = 1)
-    pessoa.cargo = cargo
+    pessoa.cargo.add(cargo)
+    
+    pessoa.cargo.add(cargo_2)
     pessoa.save()
 
     pessoas = Pessoa.objects.all()
