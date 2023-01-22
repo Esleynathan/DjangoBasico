@@ -1,5 +1,8 @@
+{% load filtros %}
+
+
 {% for i in pessoas %}
-<h1>User : {{i.id}}</h1>
+<h1>User : {{i.id|teste}}</h1>
 <h3>Nome: {{i.nome}}</h3>
 <h3>Email: {{i.email}}</h3>
 <h3>Senha: {{i.senha}}</h3>
