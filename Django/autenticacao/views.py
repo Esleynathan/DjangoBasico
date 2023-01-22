@@ -21,35 +21,11 @@ def cadastro(request):
 
         return HttpResponse('Você foi cadastrado.')
 
-def listar(request):
-    # if len(request.GET) != 0:
-    #     nome = request.GET.get('nome')
-    #     email = request.GET.get('email')
-    #     senha = request.GET.get('senha')
-
-    #     cargo = Cargos.objects.get(id=1)
-
-    #     pessoa = Pessoa(nome = nome,
-    #                     email = email,
-    #                     senha = senha,
-    #                     cargo = cargo)
-    #     pessoa.save()
-
-
-    # cargo = Cargos.objects.get(id = 1)    
-    # cargo_2 = Cargos.objects.get(id = 2)    
-    # pessoa = Pessoa.objects.get(id = 2)
-
-    # pessoa.cargo.add(cargo)    
-    # pessoa.cargo.add(cargo_2)
-    # pessoa.save()
-
-    # pessoa = Pessoa.objects.get(id = 1)    
-    cargo = Cargos.objects.filter(pessoa__pk = 1)
-
-    print(cargo)
-
+def listar(request):    
     pessoas = Pessoa.objects.all()
     return render(request, 'listar/listar.html', {'pessoas': pessoas})
-    
-    # ?nome=erika&email=erika@e.com&senha=senha1
+
+def listar_unico(request, id):
+    pessoa = Pessoa.objects.filter(id = id) 
+    print(pessoa)
+    return render(request, 'listar/listar.html', {'pessoas': pessoa})
