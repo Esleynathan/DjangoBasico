@@ -35,14 +35,17 @@ def listar(request):
     #                     cargo = cargo)
     #     pessoa.save()
 
-    cargo = Cargos.objects.get(id = 1)    
-    cargo_2 = Cargos.objects.get(id = 2)
+    # cargo = Cargos.objects.get(id = 1)    
+    # cargo_2 = Cargos.objects.get(id = 2)
     
-    pessoa = Pessoa.objects.get(id = 1)
-    pessoa.cargo.add(cargo)
+    # pessoa = Pessoa.objects.get(id = 2)
+    # pessoa.cargo.add(cargo)
     
-    pessoa.cargo.add(cargo_2)
-    pessoa.save()
+    # pessoa.cargo.add(cargo_2)
+    # pessoa.save()
+
+    pessoa_admin = Pessoa.objects.filter(cargo = 2)
+    print(pessoa_admin)
 
     pessoas = Pessoa.objects.all()
     return render(request, 'listar/listar.html', {'pessoas': pessoas})
